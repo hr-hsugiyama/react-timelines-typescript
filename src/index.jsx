@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
 import Controls from './components/Controls'
@@ -7,39 +7,37 @@ import createTime from './utils/time'
 
 const UNKNOWN_WIDTH = -1
 
-class Timeline extends Component {
-  constructor(props) {
-    super(props)
-    const timelineViewportWidth = UNKNOWN_WIDTH
-    const sidebarWidth = UNKNOWN_WIDTH
-    this.state = {
-      time: createTime({ ...props.scale, viewportWidth: timelineViewportWidth }),
-      timelineViewportWidth,
-      sidebarWidth,
-    }
-  }
+export const Timeline = props => {
+  const timelineViewportWidth = UNKNOWN_WIDTH
+  const sidebarWidth = UNKNOWN_WIDTH
+
+  const [state, setState] = useState({
+    time: createTime({ ...props.scale, viewportWidth: timelineViewportWidth }),
+    timelineViewportWidth,
+    sidebarWidth,
+  })
 
   // eslint-disable-next-line camelcase
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    const { scale } = this.props
-    const { timelineViewportWidth } = this.state
+  const UNSAFE_componentWillReceiveProps = nextProps => {
+    const { scale } = props
+    const { timelineViewportWidth } = state
 
     if (nextProps.scale !== scale) {
       const time = createTime({
         ...nextProps.scale,
         viewportWidth: timelineViewportWidth,
       })
-      this.setState({ time })
+      setState({ time })
     }
   }
 
-  handleLayoutChange = ({ timelineViewportWidth, sidebarWidth }, cb) => {
-    const { scale } = this.props
+  const handleLayoutChange = ({ timelineViewportWidth, sidebarWidth }, cb) => {
+    const { scale } = props
     const time = createTime({
       ...scale,
       viewportWidth: timelineViewportWidth,
     })
-    this.setState(
+    setState(
       {
         time,
         timelineViewportWidth,
@@ -49,54 +47,50 @@ class Timeline extends Component {
     )
   }
 
-  render() {
-    const {
-      isOpen = true,
-      toggleOpen,
-      zoomIn,
-      zoomOut,
-      scale: { zoom, zoomMin, zoomMax },
-      tracks,
-      now,
-      timebar,
-      toggleTrackOpen,
-      enableSticky = false,
-      scrollToNow,
-    } = this.props
+  const {
+    isOpen = true,
+    toggleOpen,
+    zoomIn,
+    zoomOut,
+    scale: { zoom, zoomMin, zoomMax },
+    tracks,
+    now,
+    timebar,
+    toggleTrackOpen,
+    enableSticky = false,
+    scrollToNow,
+    clickElement,
+    clickTrackButton,
+  } = props
 
-    const { time, timelineViewportWidth, sidebarWidth } = this.state
-
-    const { clickElement, clickTrackButton } = this.props
-
-    return (
-      <div className="rt">
-        <Controls
-          isOpen={isOpen}
-          toggleOpen={toggleOpen}
-          zoomIn={zoomIn}
-          zoomOut={zoomOut}
-          zoom={zoom}
-          zoomMin={zoomMin}
-          zoomMax={zoomMax}
-        />
-        <Layout
-          enableSticky={enableSticky}
-          now={now}
-          tracks={tracks}
-          timebar={timebar}
-          toggleTrackOpen={toggleTrackOpen}
-          scrollToNow={scrollToNow}
-          time={time}
-          isOpen={isOpen}
-          onLayoutChange={this.handleLayoutChange}
-          timelineViewportWidth={timelineViewportWidth}
-          sidebarWidth={sidebarWidth}
-          clickElement={clickElement}
-          clickTrackButton={clickTrackButton}
-        />
-      </div>
-    )
-  }
+  return (
+    <div className="rt">
+      <Controls
+        isOpen={isOpen}
+        toggleOpen={toggleOpen}
+        zoomIn={zoomIn}
+        zoomOut={zoomOut}
+        zoom={zoom}
+        zoomMin={zoomMin}
+        zoomMax={zoomMax}
+      />
+      <Layout
+        enableSticky={enableSticky}
+        now={now}
+        tracks={tracks}
+        timebar={timebar}
+        toggleTrackOpen={toggleTrackOpen}
+        scrollToNow={scrollToNow}
+        time={state.time}
+        isOpen={isOpen}
+        onLayoutChange={handleLayoutChange}
+        timelineViewportWidth={state.timelineViewportWidth}
+        sidebarWidth={state.sidebarWidth}
+        clickElement={clickElement}
+        clickTrackButton={clickTrackButton}
+      />
+    </div>
+  )
 }
 
 Timeline.propTypes = {
@@ -121,5 +115,3 @@ Timeline.propTypes = {
   enableSticky: PropTypes.bool,
   scrollToNow: PropTypes.bool,
 }
-
-export default Timeline

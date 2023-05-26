@@ -7,8 +7,8 @@ const Header = ({ timebar, sticky: { isSticky, sidebarWidth, headerHeight } = {}
       className={`rt-sidebar__header ${isSticky ? 'rt-is-sticky' : ''}`}
       style={isSticky ? { width: sidebarWidth } : {}}
     >
-      {timebar.map(({ id, title }) => (
-        <div key={id} className="rt-timebar-key">
+      {timebar.map(({ id, title, style }) => (
+        <div key={id} className="rt-timebar-key" style={style}>
           {title}
         </div>
       ))}
