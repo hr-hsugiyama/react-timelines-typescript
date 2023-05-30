@@ -1,4 +1,5 @@
-.rt-track-key {}
+.rt-track-key {
+}
 
 .rt-track-key__entry {
   display: flex;
@@ -6,44 +7,57 @@
   align-items: center;
 
   height: $react-timelines-track-height + $react-timelines-border-width;
+  font-size: $react-timelines-track-font-size;
   line-height: $react-timelines-track-height;
-  font-weight: bold;
   text-align: left;
   border-bottom: $react-timelines-border-width solid $react-timelines-sidebar-separator-color;
 }
 
-.rt-track-keys > .rt-track-key >
-.rt-track-key__entry {
+.rt-track-keys > .rt-track-key > .rt-track-key__entry {
+  padding-left: $react-timelines-sidebar-key-indent-width * 0.3;
+}
+
+.rt-track-keys > .rt-track-key > .rt-track-key__entry_with_icon {
   padding-left: $react-timelines-sidebar-key-indent-width;
 }
 
-.rt-track-keys > .rt-track-key >
-.rt-track-keys > .rt-track-key >
-.rt-track-key__entry  {
+.rt-track-keys > .rt-track-key > .rt-track-keys > .rt-track-key > .rt-track-key__entry {
   padding-left: $react-timelines-sidebar-key-indent-width * 2;
 }
 
-.rt-track-keys > .rt-track-key >
-.rt-track-keys > .rt-track-key >
-.rt-track-keys > .rt-track-key >
-.rt-track-key__entry {
+.rt-track-keys
+  > .rt-track-key
+  > .rt-track-keys
+  > .rt-track-key
+  > .rt-track-keys
+  > .rt-track-key
+  > .rt-track-key__entry {
   padding-left: $react-timelines-sidebar-key-indent-width * 3;
 }
 
-.rt-track-keys > .rt-track-key >
-.rt-track-keys > .rt-track-key >
-.rt-track-keys > .rt-track-key >
-.rt-track-keys > .rt-track-key >
-.rt-track-key__entry {
+.rt-track-keys
+  > .rt-track-key
+  > .rt-track-keys
+  > .rt-track-key
+  > .rt-track-keys
+  > .rt-track-key
+  > .rt-track-keys
+  > .rt-track-key
+  > .rt-track-key__entry {
   padding-left: $react-timelines-sidebar-key-indent-width * 4;
 }
 
-.rt-track-keys > .rt-track-key >
-.rt-track-keys > .rt-track-key >
-.rt-track-keys > .rt-track-key >
-.rt-track-keys > .rt-track-key >
-.rt-track-keys > .rt-track-key >
-.rt-track-key__entry {
+.rt-track-keys
+  > .rt-track-key
+  > .rt-track-keys
+  > .rt-track-key
+  > .rt-track-keys
+  > .rt-track-key
+  > .rt-track-keys
+  > .rt-track-key
+  > .rt-track-keys
+  > .rt-track-key
+  > .rt-track-key__entry {
   padding-left: $react-timelines-sidebar-key-indent-width * 5;
 }
 

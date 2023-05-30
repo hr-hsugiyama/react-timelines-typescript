@@ -1,5 +1,5 @@
 // Common
-$react-timelines-spacing: 10px;
+$react-timelines-spacing: 1px;
 $react-timelines-keyline-color: #eee !default;
 $react-timelines-separator-dark-color: darken($react-timelines-keyline-color, 10%) !default;
 
@@ -25,7 +25,8 @@ $react-timelines-sidebar-key-icon-hover-color: #eee !default;
 $react-timelines-timebar-cell-background-color: #fff;
 
 // Track / Elements
-$react-timelines-track-height: 60px !default;
+$react-timelines-track-height: 25px !default;
+$react-timelines-track-font-size: 13px !default;
 $react-timelines-element-spacing: $react-timelines-spacing !default;
 
 // Markers

@@ -1,4 +1,5 @@
-.rt-track {}
+.rt-track {
+}
 
 .rt-track__elements {
   position: relative;
@@ -9,5 +10,4 @@
 .rt-track__element {
   position: absolute;
   height: $react-timelines-track-height - 2 * $react-timelines-element-spacing;
-  top: $react-timelines-element-spacing;
 }
