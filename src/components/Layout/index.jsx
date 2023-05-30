@@ -141,6 +141,7 @@ class Layout extends PureComponent {
       timelineViewportWidth,
       clickElement,
       clickTrackButton,
+      cornerDomAdd,
     } = this.props
 
     const { isSticky, headerHeight, scrollLeft } = this.state
@@ -153,6 +154,7 @@ class Layout extends PureComponent {
             toggleTrackOpen={toggleTrackOpen}
             sticky={{ isSticky, headerHeight, sidebarWidth }}
             clickTrackButton={clickTrackButton}
+            cornerDomAdd={cornerDomAdd}
           />
         </div>
         <div className="rt-layout__main">
@@ -195,6 +197,7 @@ Layout.propTypes = {
   timelineViewportWidth: PropTypes.number,
   clickElement: PropTypes.func,
   clickTrackButton: PropTypes.func,
+  cornerDomAdd: PropTypes.func,
 }
 
 export default Layout

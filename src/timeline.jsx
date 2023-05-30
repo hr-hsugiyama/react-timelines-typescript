@@ -61,6 +61,7 @@ export const Timeline = props => {
     scrollToNow,
     clickElement,
     clickTrackButton,
+    cornerDomAdd,
   } = props
 
   return (
@@ -88,6 +89,7 @@ export const Timeline = props => {
         sidebarWidth={state.sidebarWidth}
         clickElement={clickElement}
         clickTrackButton={clickTrackButton}
+        cornerDomAdd={cornerDomAdd}
       />
     </div>
   )
@@ -114,4 +116,5 @@ Timeline.propTypes = {
   toggleTrackOpen: PropTypes.func,
   enableSticky: PropTypes.bool,
   scrollToNow: PropTypes.bool,
+  cornerDomAdd: PropTypes.func,
 }
