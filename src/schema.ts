@@ -7,6 +7,8 @@ export interface Element extends IdTitle {
   start: Date
   end: Date
   style: Record<string, string>
+
+  [prop: string]: any
 }
 
 export interface TrackElement extends IdTitle {
@@ -19,6 +21,8 @@ export interface Track extends IdTitle {
   hasButton?: boolean
   link?: string
   isOpen?: boolean
+
+  [prop: string]: any
 }
 
 export type ToggleTrackOpen = (track: Track) => void
