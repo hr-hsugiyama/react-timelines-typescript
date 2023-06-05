@@ -33,7 +33,7 @@ class Layout extends PureComponent {
       this.updateTimelineBodyScroll()
     }
 
-    addListener('resize', this.handleResize)
+    // addListener('resize', this.handleResize)
     this.handleLayoutChange(() => this.scrollToNow())
   }
 
@@ -61,7 +61,7 @@ class Layout extends PureComponent {
 
     if (enableSticky) {
       removeListener('scroll', this.handleScrollY)
-      removeListener('resize', this.handleResize)
+      // removeListener('resize', this.handleResize)
     }
   }
 
@@ -127,7 +127,7 @@ class Layout extends PureComponent {
     }
   }
 
-  handleResize = () => this.handleLayoutChange()
+  // handleResize = () => this.handleLayoutChange()
 
   render() {
     const {
