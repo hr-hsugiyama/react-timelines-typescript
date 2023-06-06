@@ -31,20 +31,17 @@ export const Timeline = props => {
     }
   }
 
-  const handleLayoutChange = ({ timelineViewportWidth, sidebarWidth }, cb) => {
+  const handleLayoutChange = ({ timelineViewportWidth, sidebarWidth }) => {
     const { scale } = props
     const time = createTime({
       ...scale,
       viewportWidth: timelineViewportWidth,
     })
-    setState(
-      {
-        time,
-        timelineViewportWidth,
-        sidebarWidth,
-      },
-      cb
-    )
+    setState({
+      time,
+      timelineViewportWidth,
+      sidebarWidth,
+    })
   }
 
   const {
@@ -66,15 +63,17 @@ export const Timeline = props => {
 
   return (
     <div className="rt">
-      <Controls
-        isOpen={isOpen}
-        toggleOpen={toggleOpen}
-        zoomIn={zoomIn}
-        zoomOut={zoomOut}
-        zoom={zoom}
-        zoomMin={zoomMin}
-        zoomMax={zoomMax}
-      />
+      {(toggleOpen || zoomIn || zoomOut) && (
+        <Controls
+          isOpen={isOpen}
+          toggleOpen={toggleOpen}
+          zoomIn={zoomIn}
+          zoomOut={zoomOut}
+          zoom={zoom}
+          zoomMin={zoomMin}
+          zoomMax={zoomMax}
+        />
+      )}
       <Layout
         enableSticky={enableSticky}
         now={now}
