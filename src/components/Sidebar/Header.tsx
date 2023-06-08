@@ -15,7 +15,7 @@ const Header = ({ timebar, sticky, cornerDomAdd }: SidebarHeaderProps): JSX.Elem
         className={`rt-sidebar__header ${sticky?.isSticky ? 'rt-is-sticky' : ''}`}
         style={sticky && sticky.isSticky ? { width: sticky.sidebarWidth } : {}}
       >
-        {cornerDomAdd
+        {cornerDomAdd && cornerDomAdd()
           ? cornerDomAdd()
           : timebar.map(({ id, title, style }) => (
               <div key={id} className={title ? 'rt-timebar-key' : ''} style={style}>
