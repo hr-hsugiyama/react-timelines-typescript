@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import TrackKeys from '.'
 
 const TrackKey = ({ track, toggleOpen, clickTrackButton }) => {
-  const { title, tracks, isOpen, hasButton, sideComponent } = track
+  const { title, tracks, isOpen, hasButton, sideComponent, style } = track
   const isExpandable = isOpen !== undefined
 
   const buildSideComponent = () => {
@@ -22,7 +22,10 @@ const TrackKey = ({ track, toggleOpen, clickTrackButton }) => {
 
   return (
     <li className="rt-track-key">
-      <div className={isExpandable ? 'rt-track-key__entry rt-track-key__entry_with_icon' : 'rt-track-key__entry'}>
+      <div
+        className={isExpandable ? 'rt-track-key__entry rt-track-key__entry_with_icon' : 'rt-track-key__entry'}
+        style={style}
+      >
         {isExpandable && (
           <button
             title="Expand track"

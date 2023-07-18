@@ -21,6 +21,7 @@ export interface Track extends IdTitle {
   hasButton?: boolean
   link?: string
   isOpen?: boolean
+  style?: Record<string, string>
 
   [prop: string]: any
 }

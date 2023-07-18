@@ -4,9 +4,9 @@ import PropTypes from 'prop-types'
 import Tracks from '.'
 import Element from './Element'
 
-const Track = ({ time, elements, isOpen, tracks, clickElement }) => (
+const Track = ({ time, elements, isOpen, tracks, clickElement, style }) => (
   <div className="tr-track">
-    <div className="rt-track__elements">
+    <div className="rt-track__elements" style={style}>
       {elements
         .filter(({ start, end }) => end > start)
         .map(element => (
