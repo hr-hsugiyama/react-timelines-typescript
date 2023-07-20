@@ -3,16 +3,18 @@
 
   position: relative;
   height: $height;
-  line-height: $height;
   background: #06f;
   color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
 .rt-element__content {
-  padding: 0 10px;
+  padding: 0 0px;
   overflow: hidden;
-  white-space: nowrap;
+  white-space: normal;
   font-weight: bold;
   text-overflow: ellipsis;
 }
