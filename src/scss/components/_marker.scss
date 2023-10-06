@@ -1,7 +1,7 @@
 .rt-marker {
   position: absolute;
-  z-index: 2;
-  top: $react-timelines-header-row-height;
+  z-index: 30;
+  top: $react-timelines-header-row-height - 40;
   bottom: 0;
   margin-left: -($react-timelines-marker-line-width / 2);
   border-left: $react-timelines-marker-line-width solid;
@@ -47,8 +47,9 @@
   text-align: center;
   background: currentColor;
   transform: translateX(-50%);
-  font-size: 16px;
+  font-size: 9px;
   font-weight: bold;
+  border-radius: 6px;
 
   &::before {
     $size: 6px;

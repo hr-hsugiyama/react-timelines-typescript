@@ -33,7 +33,7 @@ class Timeline extends Component {
   }
 
   render() {
-    const { now, time, timebar, tracks, sticky, clickElement, isDisplayPointer } = this.props
+    const { now, markerText, time, timebar, tracks, sticky, clickElement, isDisplayPointer } = this.props
 
     const { pointerDate, pointerVisible, pointerHighlighted } = this.state
 
@@ -41,7 +41,7 @@ class Timeline extends Component {
 
     return (
       <div className="rt-timeline" style={{ width: time.timelineWidthStyle }}>
-        {now && <NowMarker now={now} visible time={time} />}
+        {now && <NowMarker now={now} markerText={markerText} visible time={time} />}
         {isDisplayPointer && pointerDate && (
           <PointerMarker date={pointerDate} time={time} visible={pointerVisible} highlighted={pointerHighlighted} />
         )}
