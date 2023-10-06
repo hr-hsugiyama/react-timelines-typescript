@@ -134,6 +134,7 @@ class Layout extends PureComponent {
       isOpen,
       tracks,
       now,
+      markerText,
       time,
       timebar,
       toggleTrackOpen,
@@ -161,6 +162,7 @@ class Layout extends PureComponent {
           <div className="rt-layout__timeline" ref={this.timeline} onScroll={isSticky ? this.handleScrollX : noop}>
             <Timeline
               now={now}
+              markerText={markerText}
               time={time}
               timebar={timebar}
               tracks={tracks}
@@ -189,6 +191,7 @@ Layout.propTypes = {
   }).isRequired,
   tracks: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   now: PropTypes.instanceOf(Date),
+  markerText: PropTypes.string,
   isOpen: PropTypes.bool,
   toggleTrackOpen: PropTypes.func,
   scrollToNow: PropTypes.bool,

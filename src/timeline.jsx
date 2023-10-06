@@ -52,6 +52,7 @@ export const Timeline = props => {
     scale: { zoom, zoomMin, zoomMax },
     tracks,
     now,
+    markerText,
     timebar,
     toggleTrackOpen,
     enableSticky = false,
@@ -77,6 +78,7 @@ export const Timeline = props => {
       <Layout
         enableSticky={enableSticky}
         now={now}
+        markerText={markerText}
         tracks={tracks}
         timebar={timebar}
         toggleTrackOpen={toggleTrackOpen}
@@ -112,6 +114,7 @@ Timeline.propTypes = {
   timebar: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   tracks: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   now: PropTypes.instanceOf(Date),
+  markerText: PropTypes.string,
   toggleTrackOpen: PropTypes.func,
   enableSticky: PropTypes.bool,
   scrollToNow: PropTypes.bool,
