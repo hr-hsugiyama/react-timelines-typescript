@@ -5,11 +5,11 @@ import Track from './Track'
 
 const Tracks = ({ time, tracks, clickElement, clickTrack }) => (
   <div className="rt-tracks">
-    {tracks.map(({ id, churchId, title, elements, isOpen, tracks: children, style }) => (
+    {tracks.map(({ id, trackKey, title, elements, isOpen, tracks: children, style }) => (
       <Track
         key={id}
         title={title}
-        churchId={churchId}
+        trackKey={trackKey}
         time={time}
         elements={elements}
         isOpen={isOpen}
