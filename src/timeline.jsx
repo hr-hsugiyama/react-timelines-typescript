@@ -58,6 +58,7 @@ export const Timeline = props => {
     enableSticky = false,
     scrollToNow,
     clickElement,
+    clickTrack,
     clickTrackButton,
     cornerDomAdd,
   } = props
@@ -89,6 +90,7 @@ export const Timeline = props => {
         timelineViewportWidth={state.timelineViewportWidth}
         sidebarWidth={state.sidebarWidth}
         clickElement={clickElement}
+        clickTrack={clickTrack}
         clickTrackButton={clickTrackButton}
         cornerDomAdd={cornerDomAdd}
       />
@@ -110,6 +112,7 @@ Timeline.propTypes = {
   zoomIn: PropTypes.func,
   zoomOut: PropTypes.func,
   clickElement: PropTypes.func,
+  clickTrack: PropTypes.func,
   clickTrackButton: PropTypes.func,
   timebar: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   tracks: PropTypes.arrayOf(PropTypes.shape({})).isRequired,

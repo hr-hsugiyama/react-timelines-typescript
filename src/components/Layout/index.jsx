@@ -141,6 +141,7 @@ class Layout extends PureComponent {
       sidebarWidth,
       timelineViewportWidth,
       clickElement,
+      clickTrack,
       clickTrackButton,
       cornerDomAdd,
     } = this.props
@@ -175,6 +176,7 @@ class Layout extends PureComponent {
                 scrollLeft,
               }}
               clickElement={clickElement}
+              clickTrack={clickTrack}
             />
           </div>
         </div>
@@ -199,6 +201,7 @@ Layout.propTypes = {
   sidebarWidth: PropTypes.number,
   timelineViewportWidth: PropTypes.number,
   clickElement: PropTypes.func,
+  clickTrack: PropTypes.func,
   clickTrackButton: PropTypes.func,
   cornerDomAdd: PropTypes.func,
 }
