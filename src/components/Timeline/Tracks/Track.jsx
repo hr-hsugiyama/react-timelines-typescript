@@ -16,7 +16,6 @@ const Track = ({ trackKey, time, elements, isOpen, tracks, clickElement, clickTr
         <div
           className="rt-track__collider"
           onClick={() => {
-            console.log(trackKey)
             clickTrack(trackKey)
           }}
           style={{ height: style.height }}
