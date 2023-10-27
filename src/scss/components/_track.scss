@@ -11,3 +11,10 @@
   position: absolute;
   height: $react-timelines-track-height - 2 * $react-timelines-element-spacing;
 }
+
+.rt-track__collider {
+  position: relative;
+  height: $react-timelines-track-height - 2 * $react-timelines-element-spacing;
+  border-bottom: $react-timelines-border-width solid $react-timelines-keyline-color;
+  cursor: pointer;
+}
