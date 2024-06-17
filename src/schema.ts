@@ -3,7 +3,8 @@ export interface IdTitle {
   title: string
 }
 
-export interface Element extends IdTitle {
+export interface Element {
+  id: number
   start: Date
   end: Date
   style: Record<string, string>
